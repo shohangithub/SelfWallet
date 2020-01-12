@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfWallet", "SelfWallet.csproj", "{2D784695-0461-43DA-9A5B-767BF263EF6E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D784695-0461-43DA-9A5B-767BF263EF6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D784695-0461-43DA-9A5B-767BF263EF6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D784695-0461-43DA-9A5B-767BF263EF6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D784695-0461-43DA-9A5B-767BF263EF6E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {608240F1-F453-47A5-B5E0-197B198ECA7E}
+	EndGlobalSection
+EndGlobal
