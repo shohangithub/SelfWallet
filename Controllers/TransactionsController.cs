@@ -96,7 +96,7 @@ namespace SelfWallet.Controllers
             var existingTransaction = await _context.Transactions.Where(x => x.CommonCode == CommonCode).ToListAsync();
             if (existingTransaction.Count > 0)
             {
-                var existingAccount = _context.Accounts.ToListAsync();
+                var existingAccount = await _context.Accounts.ToListAsync();
                 var updateableTransaction = existingTransaction.Where(x=>x.AccountId == x.AccountId).ToList();
                 updateableTransaction.ForEach(x => x.Amount = x.Account.AccountPercent * x.Amount / 100);
                 await _context.SaveChangesAsync();
@@ -123,7 +123,7 @@ namespace SelfWallet.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TransactionExists(id))
+                if (!TransactionExists(CommonCode))
                 {
                     return NotFound();
                 }
@@ -164,9 +164,9 @@ namespace SelfWallet.Controllers
             return transaction;
         }
 
-        private bool TransactionExists(long id)
+        private bool TransactionExists(Guid CommonCode)
         {
-            return _context.Transactions.Any(e => e.TransactionId == id);
+            return _context.Transactions.Any(e => e.CommonCode == CommonCode);
         }
     }
 }

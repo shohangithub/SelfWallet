@@ -130,7 +130,7 @@ namespace SelfWallet.Controllers
             _context.Accounts.Add(account);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetAccount", new { AccountCode = account.AccountCode },account);
+            return RedirectToAction("GetAccount", new { AccountCode = account.AccountCode });
         }
 
         // DELETE: api/Accounts/5

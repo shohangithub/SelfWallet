@@ -27,8 +27,16 @@ namespace SelfWallet
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();     
-            services.AddDbContext<WalletContext>(options => {
+            services.AddCors(options => options.AddPolicy("ApiCorsPolicy", build =>
+            {
+                build.WithOrigins("http://localhost:4200")
+                     .AllowAnyMethod()
+                     .AllowAnyHeader();
+            }));
+
+            services.AddControllers();
+            services.AddDbContext<WalletContext>(options =>
+            {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
         }
@@ -40,10 +48,11 @@ namespace SelfWallet
             {
                 app.UseDeveloperExceptionPage();
             }
-
+           
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors("ApiCorsPolicy"); // Use the CORS policy
 
             app.UseAuthorization();
 

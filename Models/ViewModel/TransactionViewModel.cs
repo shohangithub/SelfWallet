@@ -18,8 +18,6 @@ namespace SelfWallet.Models.ViewModel
         public float Amount { get; set; }
         [Required(ErrorMessage = "Required field ! please set the value.")]
         public DateTime AddedTime { get; set; }
-        [Required(ErrorMessage = "Required field ! please set the value.")]
-        public string IpAddress { get; set; }
         public AccountViewModel Account { get; set; }
     }
 }
